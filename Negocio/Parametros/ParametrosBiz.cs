@@ -39,7 +39,7 @@ namespace Negocio.Parametros
                 {
                     context.Parametros.Add(novoParametro);
                     context.SaveChanges();
-                    logBiz = new LogBiz("Parametro", "Novo Parametro",novoParametro.Id);
+                    LogBiz.Instance.SalvarLog("Parametro", "Novo Parametro",novoParametro.Id);
                 }
                 catch (DbUpdateConcurrencyException ex)
                 {
@@ -63,7 +63,7 @@ namespace Negocio.Parametros
                     }
 
                     context.SaveChanges();
-                    logBiz = new LogBiz("Parametro", "Editar Parametro", parametro.Id);
+                    LogBiz.Instance.SalvarLog("Parametro", "Editar Parametro", parametro.Id);
                 }
                 catch (DbUpdateConcurrencyException ex)
                 {
@@ -84,7 +84,7 @@ namespace Negocio.Parametros
                     context.Parametros.Remove(param);
 
                     context.SaveChanges();
-                    logBiz = new LogBiz("Parametro", "Exclusão Parametro", idUsuario);
+                    LogBiz.Instance.SalvarLog("Parametro", "Exclusão Parametro", idUsuario);
                 }
                 catch (DbUpdateConcurrencyException ex) 
                 {

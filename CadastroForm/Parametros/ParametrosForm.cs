@@ -2,6 +2,7 @@
 using Sistema.Parametros;
 using Infraestrutura.DataBaseFactory;
 using Infraestrutura.Entidades.Parametro;
+using System;
 
 namespace Sistema
 {
@@ -64,13 +65,19 @@ namespace Sistema
                 if (MessageBox.Show("Deseja Remover os itens selecionados?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     parametrosBiz.ExcluirParametro((int)row.Cells["Id"].Value);
+                    MessageBox.Show($"Parametro {row.Cells["Chave"].Value.ToString()} removido ", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadGrid();
                 }
 
-                MessageBox.Show($"Parametro {row.Cells["Chave"].ToString()} removido ", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
             }
-            
+
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

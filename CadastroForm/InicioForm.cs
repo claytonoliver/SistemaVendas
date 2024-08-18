@@ -1,10 +1,11 @@
 using Sistema;
+using Sistema.Usuarios;
 
 namespace CadastroForm
 {
-    public partial class Form1 : Form
+    public partial class InicioForm : Form
     {
-        public Form1()
+        public InicioForm()
         {
             InitializeComponent();
             this.IsMdiContainer = true;
@@ -25,6 +26,14 @@ namespace CadastroForm
             parametros.MdiParent = this;
             parametros.WindowState = FormWindowState.Maximized;
             parametros.Show();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsuariosForm formUsuarios = new UsuariosForm();
+            formUsuarios.MdiParent = this;
+            formUsuarios.WindowState = FormWindowState.Maximized;
+            formUsuarios.Show();
         }
     }
 }

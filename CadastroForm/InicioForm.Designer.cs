@@ -1,6 +1,6 @@
 ﻿namespace CadastroForm
 {
-    partial class Form1
+    partial class InicioForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -71,6 +71,7 @@
             usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             usuariosToolStripMenuItem.Size = new Size(211, 22);
             usuariosToolStripMenuItem.Text = "Usuarios";
+            usuariosToolStripMenuItem.Click += usuariosToolStripMenuItem_Click;
             // 
             // cadastroDeFornecedoresToolStripMenuItem
             // 
@@ -79,14 +80,14 @@
             cadastroDeFornecedoresToolStripMenuItem.Text = "Cadastro de Fornecedores";
             cadastroDeFornecedoresToolStripMenuItem.Click += cadastroDeFornecedoresToolStripMenuItem_Click;
             // 
-            // Form1
+            // InicioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
+            Name = "InicioForm";
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

@@ -1,8 +1,11 @@
 ﻿using Infraestrutura.DataBaseFactory;
+using Infraestrutura.Entidades.Log;
 using Infraestrutura.Entidades.Parametro;
 using Microsoft.EntityFrameworkCore;
+using Negocio.Global;
 using Negocio.Parametros.Interfaces;
 using System.ComponentModel;
+using System.Reflection.Metadata;
 
 
 namespace Negocio.Parametros
@@ -10,6 +13,7 @@ namespace Negocio.Parametros
 
     public class ParametrosBiz : IParametrosBiz
     {
+        private LogBiz logBiz;
         public BindingList<ParametroModel> BuscarParametros()
         {
             var lista = new BindingList<ParametroModel>();
@@ -35,6 +39,7 @@ namespace Negocio.Parametros
                 {
                     context.Parametros.Add(novoParametro);
                     context.SaveChanges();
+                    logBiz = new LogBiz("Parametro", "Novo Parametro",novoParametro.Id);
                 }
                 catch (DbUpdateConcurrencyException ex)
                 {
@@ -58,6 +63,7 @@ namespace Negocio.Parametros
                     }
 
                     context.SaveChanges();
+                    logBiz = new LogBiz("Parametro", "Editar Parametro", parametro.Id);
                 }
                 catch (DbUpdateConcurrencyException ex)
                 {
@@ -76,7 +82,9 @@ namespace Negocio.Parametros
                     var param = context.Parametros.SingleOrDefault(u => u.Id == idUsuario);
 
                     context.Parametros.Remove(param);
+
                     context.SaveChanges();
+                    logBiz = new LogBiz("Parametro", "Exclusão Parametro", idUsuario);
                 }
                 catch (DbUpdateConcurrencyException ex) 
                 {

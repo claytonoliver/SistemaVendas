@@ -1,4 +1,5 @@
-﻿using Infraestrutura.Entidades.Parametro;
+﻿using Infraestrutura.Entidades.Log;
+using Infraestrutura.Entidades.Parametro;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -12,5 +13,6 @@ namespace Infraestrutura.DataBaseFactory
         }
 
         public DbSet<ParametroModel> Parametros { get; set; }
+        public DbSet<LogModel> log { get; set; }
     }
 }

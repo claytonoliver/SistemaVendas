@@ -34,6 +34,7 @@
             BtnIncluir = new ToolStripButton();
             BtnEditar = new ToolStripButton();
             BtnRemover = new ToolStripButton();
+            btnReport = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)DgParametros).BeginInit();
             toolStrip1.SuspendLayout();
             SuspendLayout();
@@ -59,7 +60,7 @@
             // 
             // toolStrip1
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { BtnIncluir, BtnEditar, BtnRemover });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { BtnIncluir, BtnEditar, BtnRemover, btnReport });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(800, 25);
@@ -97,6 +98,16 @@
             BtnRemover.Text = "Excluir";
             BtnRemover.Click += BtnRemover_Click;
             // 
+            // btnReport
+            // 
+            btnReport.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnReport.Image = (Image)resources.GetObject("btnReport.Image");
+            btnReport.ImageTransparentColor = Color.Magenta;
+            btnReport.Name = "btnReport";
+            btnReport.Size = new Size(23, 22);
+            btnReport.Text = "toolStripButton1";
+            btnReport.Click += btnReport_Click;
+            // 
             // ParametrosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -120,5 +131,6 @@
         private ToolStripButton BtnIncluir;
         private ToolStripButton BtnEditar;
         private ToolStripButton BtnRemover;
+        private ToolStripButton btnReport;
     }
 }
